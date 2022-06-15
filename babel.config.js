@@ -43,6 +43,7 @@ module.exports = {
     '@babel/typescript',
   ],
   plugins: [
+    ['@babel/plugin-transform-typescript', { allowDeclareFields: true }],
     /**
      * NOTE
      * Experimental decorators are used in `@redwoodjs/structure`.
