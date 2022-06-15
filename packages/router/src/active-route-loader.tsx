@@ -1,4 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  PropsWithChildren,
+} from 'react'
 
 import { getAnnouncement, getFocus, resetFocus } from './a11yUtils'
 import {
@@ -34,7 +39,7 @@ export const ActiveRouteLoader = ({
   params,
   whileLoadingPage,
   children,
-}: Props) => {
+}: PropsWithChildren<Props>) => {
   const location = useLocation()
   const [pageName, setPageName] = useState('')
   const loadingTimeout = useRef<NodeJS.Timeout>()
