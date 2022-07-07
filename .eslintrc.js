@@ -27,6 +27,7 @@ module.exports = {
     'packages/core/**/__fixtures__/**/*',
     'packages/codemods/**/__testfixtures__/**/*',
     'packages/core/config/storybook/**/*',
+    'packages/web/src/entry/index.js', // TODO see why this is needed for React 18 ( "Parsing error: Unexpected token, expected "," (13:38)eslint")
   ],
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
