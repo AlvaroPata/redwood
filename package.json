@@ -25,6 +25,7 @@
     "test-ci": "lerna run test --concurrency 2 -- --colors --maxWorkers"
   },
   "resolutions": {
+    "@testing-library/react": "13.3.0",
     "@types/react": "18.0.15",
     "all-contributors-cli@6.20.0": "patch:all-contributors-cli@npm:6.20.0#.yarn/patches/all-contributors-cli-npm-6.20.0-ba332c4a3e.patch",
     "microtime": "3.1.1",
@@ -57,8 +58,7 @@
     "@nrwl/nx-cloud": "14.3.0",
     "@playwright/test": "1.25.1",
     "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "12.1.5",
-    "@testing-library/react-hooks": "8.0.1",
+    "@testing-library/react": "13.3.0",
     "@testing-library/user-event": "14.4.3",
     "@types/babel__generator": "7.6.4",
     "@types/fs-extra": "9.0.13",

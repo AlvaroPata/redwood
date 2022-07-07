@@ -63,7 +63,7 @@ const AuthConsumer = () => {
     error,
   } = useAuth()
 
-  const [authToken, setAuthToken] = useState(null)
+  const [authToken, setAuthToken] = useState<string | null>(null)
 
   useEffect(() => {
     const retrieveToken = async () => {
@@ -78,7 +78,7 @@ const AuthConsumer = () => {
   }
 
   if (hasError) {
-    return <>{error.message}</>
+    return <>{error?.message}</>
   }
 
   return (
@@ -811,8 +811,8 @@ test('proxies forgotPassword() calls to client', async () => {
     </AuthProvider>
   )
 
-  // for whatever reason, forgotPassword is invoked twice
-  expect.assertions(2)
+  // TODO: figure out why upgrading to react@18/@testing-library/react@13.3/0+ changed the old behavior of invoking forgotPassword twice to once
+  expect.assertions(1)
 })
 
 test('proxies resetPassword() calls to client', async () => {
@@ -837,8 +837,8 @@ test('proxies resetPassword() calls to client', async () => {
     </AuthProvider>
   )
 
-  // for whatever reason, forgotPassword is invoked twice
-  expect.assertions(2)
+  // TODO: figure out why upgrading to react@18/@testing-library/react@13.3/0+ changed the old behavior of invoking resetPassword twice to once
+  expect.assertions(1)
 })
 
 test('proxies validateResetToken() calls to client', async () => {
@@ -863,8 +863,8 @@ test('proxies validateResetToken() calls to client', async () => {
     </AuthProvider>
   )
 
-  // for whatever reason, validateResetToken is invoked twice
-  expect.assertions(2)
+  // TODO: figure out why upgrading to react@18/@testing-library/react@13.3/0+ changed the old behavior of invoking validateResetToken twice to once
+  expect.assertions(1)
 })
 
 test('getToken doesnt fail if client throws an error', async () => {
@@ -877,7 +877,10 @@ test('getToken doesnt fail if client throws an error', async () => {
 
   const TestAuthConsumer = () => {
     const { getToken } = useAuth()
-    const [authTokenResult, setAuthTokenResult] = useState(null)
+    const [authTokenResult, setAuthTokenResult] = useState<{
+      success: boolean
+      token: string
+    } | null>(null)
 
     useEffect(() => {
       const getTokenAsync = async () => {
