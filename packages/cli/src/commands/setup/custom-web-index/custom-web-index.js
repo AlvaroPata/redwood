@@ -40,8 +40,8 @@ export const handler = async ({ force }) => {
             .readFileSync(
               path.join(
                 getPaths().base,
-                // NOTE we're copying over the index.js before babel transform
-                'node_modules/@redwoodjs/web/src/entry/index.js'
+                // NOTE we're copying over the index.js and renaming to have a .jsx extension before babel transform
+                'node_modules/@redwoodjs/web/src/entry/index.jsx'
               )
             )
             .toString()
