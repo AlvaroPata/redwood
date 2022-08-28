@@ -201,13 +201,13 @@ module.exports = (webpackEnv) => {
     entry: {
       /**
        * Prerender requires a top-level component.
-       * Before we had `ReactDOM` and a top-level component in the same file (web/index.jsx).
-       * If index.jsx is defined in the user's project, use that, if not
-       * use the one provided in web/dist/entry/index.jsx
+       * Before we had `ReactDOM` and a top-level component in the same file (web/index.js).
+       * If index.js is defined in the user's project, use that, if not
+       * use the one provided in web/dist/entry/index.js
        */
       app:
         redwoodPaths.web.index ||
-        require.resolve('@redwoodjs/web/dist/entry/index.jsx'),
+        require.resolve('@redwoodjs/web/dist/entry/index.js'),
     },
     resolve: {
       extensions: ['.wasm', '.mjs', '.js', '.jsx', '.ts', '.tsx', '.json'],
