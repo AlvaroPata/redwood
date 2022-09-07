@@ -1,4 +1,4 @@
-import type { Prisma, Post } from '@prisma/client'
+import type { Post, Prisma } from '@prisma/client'
 
 import type { ScenarioData } from '@redwoodjs/testing/api'
 
